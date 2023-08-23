@@ -30,12 +30,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var nameErorText: UITextField!
     @IBOutlet weak var nameClearBtn: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         emailTF.addTarget(self, action: #selector(emailTextFieldDidChange), for: .editingChanged)
-        
     }
     struct RegistrationParameters: Encodable {
         let email: String
@@ -44,9 +42,7 @@ class RegisterViewController: UIViewController {
     }
     func callAPIRegister(email: String, name: String, password: String) {
         let domain = "http://ec2-52-195-148-148.ap-northeast-1.compute.amazonaws.com/register"
-        
         let parameters = RegistrationParameters(email: email, name: name, password: password)
-        
         AF.request(domain, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
             .responseData { afResponse in
                 switch afResponse.result {
@@ -55,7 +51,6 @@ class RegisterViewController: UIViewController {
                         guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
                             return
                         }
-                        
                         print(json)
                         let type = json["type"] as? String
                         let message = json["message"] as? String
@@ -130,36 +125,29 @@ class RegisterViewController: UIViewController {
             clearBtn.isHidden = true
         }
     }
-    
-    
     func checkValidEmail(_ email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
     }
-    
     @IBAction func onClearButton(_ sender: Any) {
         emailTF.text = ""
         clearBtn.isHidden = true
     }
-    
     @IBAction func nameClearButton(_ sender: Any) {
         nickNmaeTF.text = ""
         nameClearBtn.isHidden = true
-        
     }
     func showSuccessAlert(message: String) {
         let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
-
     func showErrorAlert(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
-
     func onHandleValidateForm(email: String, password: String, name: String) -> Bool {
         var isEmailValid = false
         if email.isEmpty {
@@ -182,7 +170,6 @@ class RegisterViewController: UIViewController {
             errorViewHieght.constant = 0
             emailTextView.layoutIfNeeded()
         }
-        
         var isPasswordValid = false
         if password.isEmpty {
             passwordErorrView.isHidden = false
@@ -210,7 +197,6 @@ class RegisterViewController: UIViewController {
             passwordErrorViewHieght.constant = 0
             isPasswordValid = true
         }
-        
         var isNameValid = false
         if name.isEmpty {
             nameErorrView.isHidden = false
@@ -236,7 +222,6 @@ class RegisterViewController: UIViewController {
         let password = passWordTF.text ?? "";
         let name = nickNmaeTF.text ?? "";
         let isValid = onHandleValidateForm(email: email, password: password, name: name)
-        
         guard isValid else {
             return
         }
