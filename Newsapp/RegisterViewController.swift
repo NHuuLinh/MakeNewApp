@@ -96,14 +96,12 @@ class RegisterViewController: UIViewController {
         emailTextView.layer.borderWidth = 2
         emailTextView.layer.cornerRadius = 6
         emailTextView.layer.borderColor = UIColor(red: 0.31, green: 0.29, blue: 0.4, alpha: 1).cgColor
-        
         passwordErorrView.isHidden = true
         passwordErrorViewHieght.constant = 0
         passwordErorrView.layoutIfNeeded()
         passwordTextView.layer.borderWidth = 2
         passwordTextView.layer.cornerRadius = 6
         passwordTextView.layer.borderColor = UIColor(red: 0.31, green: 0.29, blue: 0.4, alpha: 1).cgColor
-        
         nameErorrView.isHidden = true
         nameErrorViewHieght.constant = 0
         nameErorrView.layoutIfNeeded()
@@ -232,8 +230,6 @@ class RegisterViewController: UIViewController {
     }
     @IBAction func HiddenButton(_ sender: Any) {
         passWordTF.isSecureTextEntry = !passWordTF.isSecureTextEntry
-
     }
-    
 }
 
