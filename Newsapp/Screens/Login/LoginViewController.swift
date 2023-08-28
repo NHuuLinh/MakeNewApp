@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     }
     func callAPIRegister(email: String, password: String) {
         let domain = "http://ec2-52-195-148-148.ap-northeast-1.compute.amazonaws.com/login"
-            let parameters = RegistrationParameters(email: email, password: password)
+        let parameters = RegistrationParameters(email: email, password: password)
         AF.request(domain, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
             .responseData { afResponse in
                 switch afResponse.result {
@@ -51,10 +51,13 @@ class LoginViewController: UIViewController {
                         let message = json["message"] as? String
                         let loginResbyObjectMapper = LoginResponseByObjectMapper(JSON: json)
                         let isRegistered = loginResbyObjectMapper?.accessToken != nil
-                        
                         if isRegistered {
-                            self.showSuccessAlert(message: "đăng nhập thành công")
-                        } else {
+                            AuthService.shared.saveAccesToken(acessToken: loginResbyObjectMapper?.accessToken ?? "")
+                            
+//                            self.showSuccessAlert(message: "đăng nhập thành công")
+                            self.gettoMainViewController()
+                        }
+                        else {
                             if let errorMessage = message {
                                 self.showErrorAlert(message: errorMessage)
                             } else {
@@ -99,7 +102,7 @@ class LoginViewController: UIViewController {
         passwordTextView.layer.cornerRadius = 6
         passwordTextView.layer.borderColor = UIColor(red: 0.31, green: 0.29, blue: 0.4, alpha: 1).cgColor
         
-
+        
     }
     @objc private func emailTextFieldDidChange() {
         if let emailText = emailTF.text, !emailText.isEmpty {
@@ -108,7 +111,7 @@ class LoginViewController: UIViewController {
             clearBtn.isHidden = true
         }
     }
-
+    
     
     
     func checkValidEmail(_ email: String) -> Bool {
@@ -125,17 +128,17 @@ class LoginViewController: UIViewController {
     func showSuccessAlert(message: String) {
         let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-
+        
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
     func showErrorAlert(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-
+        
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
     func onHandleValidateForm(email: String, password: String) -> Bool {
         var isEmailValid = false
         if email.isEmpty {
@@ -209,6 +212,17 @@ class LoginViewController: UIViewController {
     
     @IBAction func HiddenButton(_ sender: Any) {
         passWordTF.isSecureTextEntry = !passWordTF.isSecureTextEntry
+    }
+    func gettoMainViewController() {
+        let Mainstorybroad = UIStoryboard(name: "Main", bundle: nil)
+        let MainVC = Mainstorybroad.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        navigationController?.pushViewController(MainVC, animated: true)
+        
+    }
+    @IBAction func forgotPasswordButton(_ sender: Any) {
+        let Forgottorybroad = UIStoryboard(name: "Main", bundle: nil)
+        let ForgotPasswordVC = Forgottorybroad.instantiateViewController(withIdentifier: "ForgotPasswordInputEmailViewController") as! ForgotPasswordInputEmailViewController
+        navigationController?.pushViewController(ForgotPasswordVC, animated: true)
     }
 }
 

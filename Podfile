@@ -7,7 +7,12 @@ target 'Newsapp' do
 
   # Pods for Newsapp
   pod 'Alamofire'
+  
   pod 'ObjectMapper'
+  
+  pod 'KeychainSwift', '~> 20.0'
+  
+  pod 'Kingfisher', '~> 7.0'
 
 end
 

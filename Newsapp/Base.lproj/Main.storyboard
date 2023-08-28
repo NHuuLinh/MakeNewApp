@@ -102,7 +102,7 @@ been missed</string>
                                                                     <action selector="onClearButton:" destination="q3v-4U-MP7" eventType="touchUpInside" id="sSQ-uC-57q"/>
                                                                 </connections>
                                                             </button>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJM-tU-mjn">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Linh123@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJM-tU-mjn">
                                                                 <rect key="frame" x="10" y="0.0" width="310" height="48"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -197,7 +197,7 @@ been missed</string>
                                                                     <action selector="HiddenButton:" destination="q3v-4U-MP7" eventType="touchUpInside" id="zRW-Yg-ChN"/>
                                                                 </connections>
                                                             </button>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3t-Uu-nfM">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123123123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3t-Uu-nfM">
                                                                 <rect key="frame" x="10" y="0.0" width="310" height="48"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -424,6 +424,9 @@ been missed</string>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="forgotPasswordButton:" destination="q3v-4U-MP7" eventType="touchUpInside" id="r6Z-e7-IxY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -486,6 +489,112 @@ been missed</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQP-0D-UCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="768.11594202898561" y="-84.375"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="gA3-ov-0js">
+            <objects>
+                <viewController restorationIdentifier="HomeViewController" storyboardIdentifier="HomeViewController" id="iAe-jr-o5v" customClass="HomeViewController" customModule="Newsapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zzc-6o-Hq6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNn-Xk-UVW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFl-oL-yjE">
+                                        <rect key="frame" x="0.0" y="52" width="414" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Mlp-qc-qeH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="bFl-oL-yjE" secondAttribute="bottom" id="LBC-uF-vlw"/>
+                                    <constraint firstAttribute="trailing" secondItem="bFl-oL-yjE" secondAttribute="trailing" id="QAR-ff-Dgf"/>
+                                    <constraint firstItem="bFl-oL-yjE" firstAttribute="leading" secondItem="JNn-Xk-UVW" secondAttribute="leading" id="mLm-wB-MVH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-Cu-T0o">
+                                <rect key="frame" x="170" y="770" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="iAe-jr-o5v" eventType="touchUpInside" id="PmZ-yB-6UZ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yXj-w4-tXb">
+                                <rect key="frame" x="0.0" y="252" width="414" height="510"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-fg-se7">
+                                <rect key="frame" x="92" y="814" width="243" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nBo-Op-h0m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nBo-Op-h0m" firstAttribute="bottom" secondItem="yXj-w4-tXb" secondAttribute="bottom" constant="100" id="04Z-mh-ogI"/>
+                            <constraint firstItem="JNn-Xk-UVW" firstAttribute="leading" secondItem="nBo-Op-h0m" secondAttribute="leading" id="Cgd-wZ-0el"/>
+                            <constraint firstItem="bFl-oL-yjE" firstAttribute="top" secondItem="nBo-Op-h0m" secondAttribute="top" constant="8" id="EXe-r3-ski"/>
+                            <constraint firstItem="nBo-Op-h0m" firstAttribute="trailing" secondItem="JNn-Xk-UVW" secondAttribute="trailing" id="FNT-be-Iun"/>
+                            <constraint firstItem="yXj-w4-tXb" firstAttribute="leading" secondItem="nBo-Op-h0m" secondAttribute="leading" id="Mu1-3N-1Ph"/>
+                            <constraint firstItem="nBo-Op-h0m" firstAttribute="trailing" secondItem="yXj-w4-tXb" secondAttribute="trailing" id="P45-df-DKY"/>
+                            <constraint firstItem="JNn-Xk-UVW" firstAttribute="top" secondItem="zzc-6o-Hq6" secondAttribute="top" id="eXS-GY-deM"/>
+                            <constraint firstItem="yXj-w4-tXb" firstAttribute="top" secondItem="JNn-Xk-UVW" secondAttribute="bottom" id="f1E-28-73B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="homeTableView" destination="yXj-w4-tXb" id="yUr-s7-ND2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CmE-aw-eQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-165.21739130434784" y="585.9375"/>
+        </scene>
+        <!--Onbroad View Controller-->
+        <scene sceneID="Ryy-Et-DxK">
+            <objects>
+                <viewController storyboardIdentifier="OnbroadViewController" id="L6k-cC-Z3T" customClass="OnbroadViewController" customModule="Newsapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cWU-he-X0S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3g-LN-Obo">
+                                <rect key="frame" x="170" y="762" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="onhandeleOnbroad:" destination="L6k-cC-Z3T" eventType="touchUpInside" id="Ydp-Tp-LdG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j74-AT-yyO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LL7-0J-PeA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="614"/>
+        </scene>
+        <!--Main Sceen View Controller-->
+        <scene sceneID="cf5-A4-IAS">
+            <objects>
+                <viewController storyboardIdentifier="MainSceenViewController" id="gN1-7E-15T" customClass="MainSceenViewController" customModule="Newsapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQ0-fc-GpR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dUW-ty-GwM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPj-Co-XRS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2133" y="565"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="s8H-iK-ynh">
@@ -559,7 +668,7 @@ been missed</string>
                                                                     <action selector="onClearButton:" destination="dn5-Tb-oTH" eventType="touchUpInside" id="n5Q-AM-glp"/>
                                                                 </connections>
                                                             </button>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="duchv4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TKy-Ly-Qi3">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Linh123@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TKy-Ly-Qi3">
                                                                 <rect key="frame" x="8" y="13" width="310" height="21"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -1062,6 +1171,12 @@ been missed</string>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

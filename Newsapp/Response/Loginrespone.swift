@@ -1,3 +1,9 @@
+//
+//  LoginResponse.swift
+//  Newsapp
+//
+//  Created by LinhMAC on 26/08/2023.
+//
 import Foundation
 import ObjectMapper
 

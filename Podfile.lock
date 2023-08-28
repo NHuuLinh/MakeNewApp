@@ -1,20 +1,28 @@
 PODS:
   - Alamofire (5.7.1)
+  - KeychainSwift (20.0.0)
+  - Kingfisher (7.9.1)
   - ObjectMapper (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
+  - KeychainSwift (~> 20.0)
+  - Kingfisher (~> 7.0)
   - ObjectMapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - KeychainSwift
+    - Kingfisher
     - ObjectMapper
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
+  Kingfisher: 1d14e9f59cbe19389f591c929000332bf70efd32
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
 
-PODFILE CHECKSUM: 82fa06a1a00e5df88b16ae4790e28d05206666c2
+PODFILE CHECKSUM: 9554722b059622d66a879a3ca98bc72a22a2c8e3
 
 COCOAPODS: 1.12.1
